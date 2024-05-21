@@ -1,6 +1,5 @@
 "use client";
 import * as React from "react";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -31,10 +30,12 @@ interface Props {
       price_with_discount: null;
       quantity: number;
     }[];
-  };
+  }
+  start: number;
+  end: number;
 }
 
-export const CarouselCard: React.FC<Props> = ({ data }) => {
+export const CarouselCard: React.FC<Props> = ({ data, start, end }) => {
   return (
     <div className="w-full">
       <div className="w-[86%] px-5 flex justify-around items-center 2xl:p-0 xl:justify-between xl:px-6">
@@ -46,11 +47,11 @@ export const CarouselCard: React.FC<Props> = ({ data }) => {
             Deals
           </span>
         </div>
-        <div className="border-t-2 border-gray-300 w-[35%] xl:w-[60%] 2xl:w-[68%]"></div>
+        <div className="border-t-2 border-gray-300 w-[35%] lg:w-[56%] lg:mr-5 xl:w-[60%] 2xl:w-[68%]"></div>
       </div>
       <Carousel className="w-full relative mt-1 px-5">
         <CarouselContent className="">
-          {data.results.slice(0, 3).map((item, index) => (
+          {data.results.slice(start, end).map((item, index) => (
             <CarouselItem key={index}>
               <div className="flex flex-col justify-center items-center bg-white rounded-lg sm:flex-row">
                 <img
@@ -87,7 +88,7 @@ export const CarouselCard: React.FC<Props> = ({ data }) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="absolute top-[-25px] ml-[92%] sm:ml-[89%] md:ml-[92%] " />
+        <CarouselPrevious className="absolute top-[-25px] ml-[92%] sm:ml-[89%] md:ml-[92%] lg:ml-[88%] 2xl:ml-[92%]" />
         <CarouselNext className="absolute top-[-25px] mr-[60px] sm:mr-[89px] xl:mr-[75px]" />
       </Carousel>
     </div>

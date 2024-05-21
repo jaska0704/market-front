@@ -5,12 +5,16 @@ import { AccordionDemo } from "./components/accardion";
 import { CardsCategory } from "./components/cards-category";
 import { CarouselCardPage } from "./components/carousel-card-page";
 import CardsSubcategory from "./components/cards-subcategory";
+import Image from "next/image";
+import { DigitalTitle } from "./components/digital-title";
+import { DigitalBaner } from "./components/digital-baner";
+import { Digital } from "./components/digital";
 
 export default async function Home() {
   const data = await getBanner();
 
   return (
-    <main className="w-full bg-slate-200 dark:bg-black">
+    <main className="w-full  dark:bg-black">
       <div className="container">
         <div className=" w-full lg:flex lg:gap-2">
           <div className="hidden lg:block lg:w-3/12 shadow-2xl">
@@ -91,9 +95,46 @@ export default async function Home() {
         <div className="mb-5 lg:scrollbar-alert-danger">
           <CardsCategory />
         </div>
-        <div className="flex flex-col gap-4 lg:flex-row">
-          <CarouselCardPage />
-          <CardsSubcategory />
+        <div className="flex flex-col gap-4 my-10 lg:flex-row xl:gap-7">
+          <CarouselCardPage start={0} end={3} />
+          <CardsSubcategory id={2176} />
+        </div>
+        <div className="flex flex-col lg:flex-row gap-5">
+          <Image
+            src="/banner14.jpg"
+            alt="banner"
+            width={450}
+            height={300}
+            className="w-full lg:w-[49%]"
+          />
+          <Image
+            src="/banner15.jpg"
+            alt="banner"
+            width={450}
+            height={300}
+            className="w-full lg:w-[49%]"
+          />
+        </div>
+        <div>
+          <DigitalTitle nameSub="Computer & Desktop" />
+          <div className="flex justify-start items-center gap-2 w-full my-4">
+            <DigitalBaner image="/img-tab1.jpg" />
+            <Digital />
+          </div>
+        </div>
+        <div>
+          <DigitalTitle nameSub="Chair & Table" />
+          <div className="flex justify-start items-center gap-2 w-full my-4">
+            <Digital />
+            <DigitalBaner image="/cate11.jpg" />
+          </div>
+        </div>
+        <div>
+          <DigitalTitle nameSub="Clothing & Bags" />
+          <div className="flex justify-start items-center gap-2 w-full my-4">
+            <DigitalBaner image="/cate12.jpg" />
+            <Digital />
+          </div>
         </div>
       </div>
     </main>

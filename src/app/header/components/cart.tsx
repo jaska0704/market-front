@@ -51,11 +51,11 @@ const Cart = () => {
                           {item.title}
                         </h1>
                         <div className="flex justify-between items-center">
-                          <div>
+                          <div className='px-[3px] border-[1px]'>
                             <button
                               onClick={() => Decrement(item.id)}
-                              className="text-[12px] px-2 py-1 rounded-lg bg-amber-500"
-                              disabled={item.userCount === 0}
+                              className="text-[12px] px-2 py-1 rounded-lg bg-orange-500"
+                              disabled={item.userCount === 1}
                             >
                               -
                             </button>
@@ -64,7 +64,7 @@ const Cart = () => {
                             </span>
                             <button
                               onClick={() => Increment(item.id)}
-                              className="text-[12px] px-2 py-1 rounded-lg bg-amber-500"
+                              className="text-[12px] px-2 py-1 rounded-lg bg-orange-500"
                               disabled={item.userCount === item.quantity}
                             >
                               +

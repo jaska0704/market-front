@@ -2,7 +2,19 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { loadState } from "../../config/save-state";
 
 interface LikeItem {
+  attribute_value: [];
   id: number;
+  images:{
+    image: string;
+    image_id: number;
+  }[];
+  is_available: boolean;
+  other_detail: string;
+  price: string;
+  price_with_discount: null;
+  product: number;
+  quantity: number;
+  title: string;
 }
 
 export interface LikedState {

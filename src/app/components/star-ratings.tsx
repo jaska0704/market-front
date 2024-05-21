@@ -7,7 +7,7 @@ export const StarRatings: React.FC = () => {
   const [hover, setHover] = useState<number | null>(null);
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-2">
       <div className="flex">
         {[...Array(5)].map((_, index) => {
           const currentRating = index + 1;

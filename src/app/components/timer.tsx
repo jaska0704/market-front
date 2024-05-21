@@ -70,7 +70,7 @@ const Timer: React.FC = () => {
   return (
     <div>
       <h1 className="text-[14px] font-semibold py-3">Hurry up! Special offer:</h1>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 dark:text-black">
         <div className="flex flex-col justify-center items-center rounded-full bg-gray-200 w-[60px] h-[60px]">
           {day > 0 && <h2 className="font-bold">{day}</h2>}
           <h2 className="text-[10px] text-gray-500">DAYS</h2>

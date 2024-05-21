@@ -13,7 +13,7 @@ export const AccordionDemo = async () => {
   const data = await getCategory()
   
   return (
-    <Accordion type="single" collapsible className="w-full px-5 overflow-auto h-[500px] bg-white mt-4 dark:text-black">
+    <Accordion type="single" collapsible className="w-full px-5 overflow-auto h-[500px] dark:bg-gray-500 bg-white mt-4 dark:text-black">
       {data?.results?.map((item, index) => (
         <AccordionItem value={`item-${index + 1}`} key={item.id}>
           <AccordionTrigger className="outline-none ">{item.title}</AccordionTrigger>

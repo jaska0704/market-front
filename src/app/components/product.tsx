@@ -8,6 +8,7 @@ import { FaHeart } from "react-icons/fa6";
 import { RootState } from "@/redux/store";
 import Link from "next/link";
 import { addLike, likeDelete } from "@/redux/reduser/like-reduser";
+import Image from "next/image";
 
 interface typeProducts {
   id: number;
@@ -48,17 +49,21 @@ const Products = (props: typeProducts) => {
   }
 
   return (
-    <div className="w-[250px] h-[310px] bg-white shadow-xl flex flex-col items-center p-4 justify-between py-3 relative group overflow-hidden rounded-xl lg:w-[210px] 2xl:w-[200px]">
+    <div className="w-[250px] h-[310px] bg-white shadow-lg flex flex-col items-center p-4 mb-6 justify-between py-3 relative group overflow-hidden rounded-xl md:w-[230px] lg:w-[200px]">
       <div className="flex justify-center overflow-hidden ">
-        <img
-          className="w-full hover:scale-110 transition-all duration-300 ease-in-out"
+        <Image
+          className="w-full h-[180px] hover:scale-110 transition-all duration-300 ease-in-out"
           src={props?.images[0].image}
           alt="image"
+          width={400}
+          height={400}
         />
       </div>
-      <div className="flex justify-between text-[12px] w-full py-6">
-        <h1>{props.title}</h1>
-        <p>{props.price}</p>
+      <div className="flex flex-col justify-between w-full py-6">
+        <h1 className="font-bold uppercase text-[12px]">{props.title}</h1>
+        <p className="font-bold uppercase text-[20px] text-blue-500">
+          ${props.price}
+        </p>
       </div>
       <div className="absolute left-0 top-[-100%] opasity-0  group-hover:top-0 p-4 w-full h-full bg-black/60 group-hover:backdrop-blur-sm divide-neutral-500 duration-500 ">
         <div className="flex flex-col justify-between h-full">
@@ -81,11 +86,18 @@ const Products = (props: typeProducts) => {
             </div>
           </Slide>
           <Fade cascade damping={0.7}>
+            <p className="text-[12px] text-white">{props.title}</p>
+            <h1
+              dangerouslySetInnerHTML={{
+                __html: props.other_detail.slice(0, 100),
+              }}
+              className="text-[10px] text-white"
+            ></h1>
             {cartId ? (
               <div className="w-full border-t-2 pt-5">
                 <button
                   onClick={() => removeProduct()}
-                  className="bg-red-500 text-white px-[44px] py-2 rounded-3xl outline-none"
+                  className="bg-red-500 text-white px-[76px] py-2 rounded-3xl outline-none lg:px-14"
                 >
                   Remove
                 </button>
@@ -94,9 +106,9 @@ const Products = (props: typeProducts) => {
               <div className="w-full border-t-2 pt-5">
                 <button
                   onClick={() => AddProductcart()}
-                  className="bg-orange-400 text-white px-5 py-2 rounded-3xl outline-none"
+                  className="bg-orange-400 text-white px-14 py-2 rounded-3xl outline-none lg:px-8"
                 >
-                  Add to cart
+                  + Add to cart
                 </button>
               </div>
             )}

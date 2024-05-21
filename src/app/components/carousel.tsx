@@ -24,20 +24,20 @@ export const CarouselDApiDemo: React.FC<Prop> = ({ data }) => {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
-  //   const data = await getBanner();
+    // const data = await getBanner();
 
-  // React.useEffect(() => {
-  //   if (!api) {
-  //     return;
-  //   }
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
 
-  //   setCount(api.scrollSnapList().length);
-  //   setCurrent(api.selectedScrollSnap() + 1);
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
 
-  //   api.on("select", () => {
-  //     setCurrent(api.selectedScrollSnap() + 1);
-  //   });
-  // }, [api]);
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
 
   return (
     <div className="w-full mt-4">

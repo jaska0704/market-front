@@ -3,8 +3,9 @@ import React from "react";
 import { getProductCategory } from "../service/getProductCategory";
 import { CarouselSpacing } from "./carousel-subcategory";
 
-const CardsSubcategory = async () => {
-  const data = await getProductCategory(String(2176));
+const CardsSubcategory = async ({ id }: { id: number }) => {
+  const data = await getProductCategory(String(id));
+  
   return <CarouselSpacing data={data} />;
 };
 export default CardsSubcategory;

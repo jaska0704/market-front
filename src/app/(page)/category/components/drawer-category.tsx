@@ -5,25 +5,33 @@ import Link from "next/link";
 import React from "react";
 
 interface types {
-  subData: {
+  data: {
     count: number;
-    next: string;
-    previous: string;
+    next: null;
+    previous: null;
     results: {
       id: number;
       title: string;
       image: string;
+      children: {
+        id: number;
+        title: string;
+        image: string;
+      }[];
     }[];
-  },
-  itemm: string
+  };
+  itemm: string;
 }
 
-export const DrawerCategory: React.FC<types> = ({ subData, itemm }) => {
+export const DrawerCategory: React.FC<types> = ({ data, itemm }) => {
   const [open, setOpen] = React.useState(false);
 
   return (
     <div className="container">
-      <button className="fixed top-[50%] left-1 lg:hidden" onClick={() => setOpen(!open)}>
+      <button
+        className="fixed top-[50%] left-1 lg:hidden"
+        onClick={() => setOpen(!open)}
+      >
         <ImEqualizer size={25} />
       </button>
       <DrawerDemo
@@ -36,9 +44,18 @@ export const DrawerCategory: React.FC<types> = ({ subData, itemm }) => {
               <button onClick={() => setOpen(!open)}>X</button>
             </div>
             <ul>
-              {subData?.results?.map((item) => (
+              {data?.results?.map((item) => (
                 <li key={item.id} className="py-2 border-b-2 border-gray-400 ">
-                  <Link className={item.id === Number(itemm) ? "text-orange-500" : "text-black"} href={`/sub-category/${item.id}`}>{item.title}</Link>
+                  <Link
+                    className={
+                      item.id === Number(itemm)
+                        ? "text-orange-500"
+                        : "text-black"
+                    }
+                    href={`/category/${item.id}`}
+                  >
+                    {item.title}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -49,4 +66,6 @@ export const DrawerCategory: React.FC<types> = ({ subData, itemm }) => {
   );
 };
 
-{/* ul>li*5>a */}
+{
+  /* ul>li*5>a */
+}
