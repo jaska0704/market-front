@@ -9,6 +9,7 @@ import Image from "next/image";
 import { DigitalTitle } from "./components/digital-title";
 import { DigitalBaner } from "./components/digital-baner";
 import { Digital } from "./components/digital";
+import { CarouselBrand } from "./components/carusel-brand";
 
 export default async function Home() {
   const data = await getBanner();
@@ -135,6 +136,9 @@ export default async function Home() {
             <DigitalBaner image="/cate12.jpg" />
             <Digital />
           </div>
+        </div>
+        <div>
+          <CarouselBrand/>
         </div>
       </div>
     </main>
