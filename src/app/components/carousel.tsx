@@ -10,6 +10,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
 
 interface Prop {
   data: {
@@ -56,7 +57,9 @@ export const CarouselDApiDemo: React.FC<Prop> = ({ data }) => {
               <Card>
                 <CardContent className="flex items-center justify-center w-full h-[350px] md:h-[390px] lg:h-[500px]">
                   <div className="h-full w-full relative">
-                    <img
+                    <Image
+                      width={500}
+                      height={500}
                       src={item.image}
                       alt={item.title}
                       className="w-full h-full"

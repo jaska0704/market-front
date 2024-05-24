@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { StarRatings } from "./star-ratings";
 import Timer from "./timer";
+import Image from "next/image";
 
 interface Props {
   data: {
@@ -54,7 +55,7 @@ export const CarouselCard: React.FC<Props> = ({ data, start, end }) => {
           {data.results.slice(start, end).map((item, index) => (
             <CarouselItem key={index}>
               <div className="flex flex-col justify-center items-center bg-white rounded-lg sm:flex-row">
-                <img
+                <Image width={500} height={500}
                   className="w-[50%] sm:w-[35%] sm:h-[30%]"
                   src={item.images[0].image}
                   alt="image"

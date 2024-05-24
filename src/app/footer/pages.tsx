@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
@@ -102,7 +103,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <img src="/paypal.png" alt="" />
+            <Image width={250} height={250} src="/paypal.png" alt="" />
           </div>
         </div>
       </div>

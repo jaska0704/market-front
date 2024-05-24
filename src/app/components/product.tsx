@@ -106,7 +106,7 @@ const Products = (props: typeProducts) => {
               <div className="w-full border-t-2 pt-5">
                 <button
                   onClick={() => AddProductcart()}
-                  className="bg-orange-400 text-white px-14 py-2 rounded-3xl outline-none lg:px-8"
+                  className="bg-orange-400 text-white px-14 py-2 rounded-3xl outline-none md:px-12 lg:px-8"
                 >
                   + Add to cart
                 </button>

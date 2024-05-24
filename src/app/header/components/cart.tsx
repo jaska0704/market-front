@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import { remove, toggleAnmount } from '@/redux/reduser/reduser';
+import Image from 'next/image';
 
 interface typeProducts {
   cartProduct: {
@@ -41,10 +42,12 @@ const Cart = () => {
     <div>
          {cartProduct?.map((item) => (
                     <div key={item.id} className="flex justify-between items-center border-t-2 py-3 px-4">
-                      <img
+                      <Image
                         className="w-[50px] h-[50px] border-2 border-orange-500 rounded-full"
                         src={item.images[0].image}
                         alt="image"
+                        width={50}
+                        height={50}
                       />
                       <div>
                         <h1 className="text-[12px] font-semibold">

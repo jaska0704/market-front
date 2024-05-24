@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { BiSupport } from "react-icons/bi";
 import { IoMenu } from "react-icons/io5";
 import { FaAngleRight } from "react-icons/fa6";
