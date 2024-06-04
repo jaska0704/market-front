@@ -152,9 +152,11 @@ const Header = () => {
                         href={`/product/${item.id}`}
                         key={item.id}
                       >
-                        <div className="flex items-center bg-white border-b-[1px] flex-wrap w-[590px] h-[60px] max-xl:w-[300px]">
-                          <img
-                            style={{ width: 50, height: 50, marginRight: 10 }}
+                        <div className="flex items-center gap-4 bg-white border-b-[1px] flex-wrap w-[590px] h-[60px] max-xl:w-[300px]">
+                          <Image
+                            className="w-[50px] h-[50px] object-cover"
+                            width={50}
+                            height={50}
                             src={item.images[0].image}
                             alt="img"
                           />
